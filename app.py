@@ -62,9 +62,9 @@ petal_width_mean = np.mean(df['petal_width'])
 st.header("Please provide the inputs for prediction")
 
 sepal_length = st.slider("Sepal Length",float(sepal_length_min),float(sepal_length_max),float(sepal_length_mean),0.1)
-sepal_width = st.slider("Sepal Width",sepal_width_min,sepal_width_max,sepal_width_mean,0.1)
-petal_length = st.slider("Petal Length",petal_length_min,petal_length_max,petal_length_mean,0.1)
-petal_width = st.slider("Petal Width",petal_width_min,petal_width_max,petal_width_mean,0.1)
+sepal_width = st.slider("Sepal Width",float(sepal_width_min),float(sepal_width_max),float(sepal_width_mean),0.1)
+petal_length = st.slider("Petal Length",float(petal_length_min),float(petal_length_max),float(petal_length_mean),0.1)
+petal_width = st.slider("Petal Width",float(petal_width_min),float(petal_width_max),float(petal_width_mean),0.1)
 
 input_by_user = np.array([sepal_length,sepal_width,petal_length,petal_width]).reshape(1,-1)
 prediction = model.predict(input_by_user)
