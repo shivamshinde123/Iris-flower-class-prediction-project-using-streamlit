@@ -35,7 +35,7 @@ for column in df.columns.drop('species'):
     df[column].fillna(np.mean(df[column]))
 
 x = df.drop('species',axis=1)
-y = pd.DataFrame(df['species'],columns=['species'])
+y = df['species']
 
 rfc = RandomForestClassifier(max_depth=2,random_state=123)
 model = rfc.fit(x,y)
